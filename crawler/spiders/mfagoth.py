@@ -23,7 +23,7 @@ mouth = {
 }
 #Auther:
 class DemoSpiderSpider(BaseSpider):
-    name = 'motsgoth'
+    name = 'mfagoth'
     website_id = 1609
     language_id = 0
     start_urls = ['https://www.mfa.go.th/']

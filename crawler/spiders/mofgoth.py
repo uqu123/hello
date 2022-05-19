@@ -20,9 +20,8 @@ class DemoSpiderSpider(BaseSpider):
         start = soup.select_one(
             'body > article > section:nth-child(3) > div > div > div > div.col-md-8 > div > div > div.viewall2f > a:nth-child(2)').get(
             'href')
-
+        response.meta['category1'] = 'ภาพข่าวและกิจกรรม'
         news_page_url = start
-        #response.meta['category1'] ='News'
         yield Request(url=news_page_url,callback=self.parse_page,meta=response.meta)
 
     def parse_page(self,response):
@@ -64,8 +63,8 @@ class DemoSpiderSpider(BaseSpider):
     def parse_item(self, response):
         soup=BeautifulSoup(response.text,'lxml')
         item = NewsItem()
-        #item['category1'] = response.meta['category1']
         item['category2'] = None
+        item['category1'] = response.meta['category1']
         item['abstract'] = response.meta['abstract']
         item['pub_time'] = response.meta['time']
         item['title'] = response.meta['title']

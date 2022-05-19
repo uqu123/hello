@@ -6,12 +6,11 @@ from scrapy.http.request import Request
 
 
 class LsecuritynewscomSpider(BaseSpider):
-    name = 'lsecuritynewscom'
+    name = 'motgoth'
     website_id = 1630
     language_id = 2005
     # allowed_domains = ['www.lsecuritynews.com/']
-    start_urls = ['https://www.lsecuritynews.com/']  # https://www.lsecuritynews.com/
-
+    start_urls = ['https://www.mot.go.th/']  # https://www.lsecuritynews.com/
     def __init__(self, time=None, *args, **kwargs):
         super(LsecuritynewscomSpider, self).__init__(*args, **kwargs)  # 将这行的DemoSpider改成本类的名称
         self.time = time
